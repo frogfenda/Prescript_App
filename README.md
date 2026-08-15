@@ -22,18 +22,18 @@ The UI already reserves space for future device IDs, remote targets, user IDs, i
 
 ## Setup
 
-This repository currently contains Flutter source code only. If `flutter` is not installed yet:
+This is a standalone Flutter repository with the Android platform project already generated.
 
 1. Install Flutter and Android tooling.
-2. From this directory, run `flutter create . --platforms=android`.
-3. Run `flutter pub get`.
+2. Run `flutter pub get`.
+3. Run `flutter analyze`.
 4. Run on an Android phone with BLE enabled.
 
-Android BLE permissions may need to be checked after platform files are generated.
+The companion firmware repository is `ESP32_Prescript_Terminal`. Protocol changes must be checked against the firmware parser/router, embedded WebBLE client, and this Flutter client together.
 
 ## Android BLE Permissions
 
-After `flutter create . --platforms=android`, check `android/app/src/main/AndroidManifest.xml`.
+Check `android/app/src/main/AndroidManifest.xml` when changing Android targets or BLE behavior.
 For Android 12+ BLE scanning/connection, the app usually needs:
 
 ```xml
